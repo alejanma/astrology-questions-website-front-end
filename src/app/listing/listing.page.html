@@ -1,0 +1,35 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Listing</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Listing</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-list>
+
+    <ion-card *ngFor="let item of itemList">
+      <ion-card-header>
+        <ion-card-title>{{item.Question}}</ion-card-title>
+        <ion-card-subtitle>ID {{item.CID}}</ion-card-subtitle>
+      </ion-card-header>
+    
+      <ion-card-content>
+        {{item.Answer}}
+      </ion-card-content>
+    
+      <ion-button fill="clear" (click)="updateQuestion(item)">Update</ion-button>
+    </ion-card>
+
+  </ion-list>
+</ion-content>
+
+
